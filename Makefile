@@ -6,32 +6,36 @@
 #    By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 16:30:26 by rdias-ba          #+#    #+#              #
-#    Updated: 2023/02/16 17:47:37 by rdias-ba         ###   ########.fr        #
+#    Updated: 2023/02/27 18:47:49 by rdias-ba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= push_swap
+LIB_NAME	= libft
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra
 
 SRCS_DIR	= srcs/
 OBJS_DIR	= objs/
-LIB_DIR		= libft
+LIB_DIR		= libft/
 INCLUDE		= include/
 
 SRCS		= main.c
 
-OBJS		= $(SRCS:%.c=$(OBJS_DIR)/%.o)
+OBJS		= $(SRCS:%.c=$(OBJS_DIR)%.o)
 
-all : $(NAME)
+all: $(OBJS_DIR) $(NAME)
 
-$(NAME): $(OBJS) $(LIB_DIR)/$(LIB_DIR).a
-			$(CC) $(CFLAGS) -o $@ $^
+$(NAME): $(OBJS) $(LIB_DIR)$(LIB_NAME).a
+			$(CC) $(CFLAGS) $^ -o $@
 
-$(OBJS): $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
-			$(CC) $(CFLAGS) -I$(INCLUDE) -I$(LIB_DIR)/include -c $< -o $@
+$(OBJS_DIR):
+			mkdir -p $@
 
-$(LIB_DIR)/$(LIB_DIR).a:
+$(OBJS): $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
+			$(CC) $(CFLAGS) -I$(INCLUDE) -I$(LIB_DIR)include -g -c $< -o $@
+
+$(LIB_DIR)$(LIB_NAME).a:
 			$(MAKE) -C $(LIB_DIR)
 
 clean:

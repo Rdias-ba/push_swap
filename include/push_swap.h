@@ -1,11 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/21 17:58:21 by rdias-ba          #+#    #+#             */
+/*   Updated: 2023/02/27 19:04:41 by rdias-ba         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "libft.h"
+# include "../libft/includes/ft_printf.h"
+# include "../libft/includes/libft.h"
 
-t_list    *create_struct_a(int argc, char **argv);
-void    check_int(char **lst);
-void    check_dup(t_list *lst);
-void    if_two(char **lst);
+typedef struct s_tabl
+{
+	int				tab;
+	struct s_tabl	*next;
+}					t_tabl;
+
+void	check_int(int c, char **list);
 
 #endif
