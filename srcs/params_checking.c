@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   before_sorting.c                                   :+:      :+:    :+:   */
+/*   params_checking.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 16:13:33 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/03/03 16:45:08 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/03/14 22:29:47 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	check_dup(int c, char **list)
+static void	check_dup(int c, char **list)
 {
 	int	temp;
 	int	i;
@@ -40,7 +40,34 @@ void	check_dup(int c, char **list)
 	}
 }
 
-void	check_int(int c, char **list)
+static void	check_white_space(int c, char **list)
+{
+	size_t	i;
+	size_t	j;
+	char	*temp;
+
+	i = 0;
+	j = 1;
+	while (j < c)
+	{
+		temp = list[j];
+		while (*temp)
+		{
+			if (*temp == ' ' || *temp == '\n' || *temp == '\r'
+				|| *temp == '\t' || *temp == '\v' || *temp == '\f')
+				i++;
+			temp++;
+		}
+		if (i == ft_strlen(list[j]))
+		{
+			ft_printf("Error\n");
+			exit(EXIT_FAILURE);
+		}
+		j++;
+	}
+}
+
+static void	check_is_nb(int c, char **list)
 {
 	int	i;
 	int	j;
@@ -65,17 +92,28 @@ void	check_int(int c, char **list)
 	}
 }
 
-int	check_is_sorted(t_tabl *list)
+static void	check_int(int c, char **list)
 {
-	int	i;
+	long long	temp;
+	int			j;
 
-	i = list->tab;
-	while (list->next)
+	j = 1;
+	while (j < c)
 	{
-		list = list->next;
-		if (i > list->tab)
-			return (1);
-		i = list->tab;
+		temp = ft_atoll(list[j]);
+		if (temp < -2147483648 || temp > 2147483647)
+		{
+			ft_printf("Error\n");
+			exit(EXIT_FAILURE);
+		}
+		j++;
 	}
-	return (0);
+}
+
+void	check_params(int c, char **list)
+{
+	check_white_space(c, list);
+	check_is_nb(c, list);
+	check_int(c, list);
+	check_dup(c, list);
 }

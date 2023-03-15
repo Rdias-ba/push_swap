@@ -6,7 +6,7 @@
 #    By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 16:30:26 by rdias-ba          #+#    #+#              #
-#    Updated: 2023/03/03 16:48:06 by rdias-ba         ###   ########.fr        #
+#    Updated: 2023/03/15 17:55:29 by rdias-ba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ OBJS_DIR	= objs/
 LIB_DIR		= libft/
 INCLUDE		= include/
 
-SRCS		= main.c tab_struct.c move_instructions.c tab_struct_utils.c before_sorting.c
+SRCS		= main.c tab_struct.c push_utils.c tab_struct_utils.c params_checking.c swap_utils.c \
+ 				rotate_utils.c reverse_rotate_utils.c sorting_utils.c string_low_args.c sorting_big.c \
 
 OBJS		= $(SRCS:%.c=$(OBJS_DIR)%.o)
 

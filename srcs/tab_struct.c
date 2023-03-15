@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 15:57:06 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/03/03 16:09:19 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:35:23 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,34 @@ t_tabl	*newcell(int nb)
 	if (!lst)
 		return (NULL);
 	lst->tab = nb;
+	lst->index = 0;
 	lst->next = NULL;
 	return (lst);
+}
+
+void	arg_indexer(t_tabl **list_a)
+{
+	t_tabl	*temp;
+	t_tabl	*temp_2;
+
+	temp = (*list_a);
+	while (temp)
+	{
+		temp->index = 0;
+		temp = temp->next;
+	}
+	temp = (*list_a);
+	while (temp)
+	{
+		temp_2 = (*list_a);
+		while (temp_2)
+		{
+			if (temp->tab > temp_2->tab)
+				temp->index++;
+			temp_2 = temp_2->next;
+		}
+		temp = temp->next;
+	}
 }
 
 t_tabl	*create_struct_a(int argc, char **argv)
