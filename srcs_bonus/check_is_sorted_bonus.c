@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_is_sorted_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 15:44:49 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/15 17:50:03 by rdias-ba         ###   ########.fr       */
+/*   Created: 2023/05/15 12:01:07 by rdias-ba          #+#    #+#             */
+/*   Updated: 2023/05/15 15:35:30 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../include_bonus/push_swap_bonus.h"
 
-int	main(int argc, char **argv)
+int	check_is_sorted(t_tabl *list)
 {
-	t_tabl	*tab_a;
-	t_tabl	*tab_b;
+	int	i;
 
-	tab_a = NULL;
-	tab_b = NULL;
-	if (argc <= 1)
+	i = list->index;
+	if (i != 0)
 		return (0);
-	if (argc == 2)
-		params_checking_one_arg(argv, &tab_a);
-	else
+	if (!list->next && list)
+		return (1);
+	while (list->next)
 	{
-		check_params(argc, argv);
-		parsing(argc, argv, &tab_a);
+		list = list->next;
+		if (i > list->index)
+			return (0);
+		i = list->index;
 	}
-	arg_indexer(&tab_a);
-	sort_tab(&tab_a, &tab_b);
-	free_list(&tab_a, &tab_b);
-	return (0);
+	return (1);
 }

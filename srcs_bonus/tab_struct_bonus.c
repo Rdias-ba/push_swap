@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tab_struct.c                                       :+:      :+:    :+:   */
+/*   tab_struct_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 15:57:06 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/03/22 08:44:40 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/11 18:37:00 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../include_bonus/push_swap_bonus.h"
 
 void	lst_addback(t_tabl **lst, t_tabl *new)
 {

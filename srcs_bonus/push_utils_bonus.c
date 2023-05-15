@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_utils.c                                       :+:      :+:    :+:   */
+/*   push_utils_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 16:11:05 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/03/22 08:46:11 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:28:14 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static void	push(t_tabl **lista, t_tabl **listb)
 
 	if (!*lista)
 		return ;
+	if (!(*lista)->next)
+		(*lista)->next = NULL;
 	copy = newcell((*lista)->tab, (*lista)->index);
 	temp = *lista;
 	if (!(*listb))
@@ -34,7 +36,6 @@ void	push_a(t_tabl **lista, t_tabl **listb)
 	if (!*listb)
 		return ;
 	push(listb, lista);
-	ft_printf("pa\n");
 }
 
 void	push_b(t_tabl **lista, t_tabl **listb)
@@ -42,5 +43,4 @@ void	push_b(t_tabl **lista, t_tabl **listb)
 	if (!*lista)
 		return ;
 	push(lista, listb);
-	ft_printf("pb\n");
 }

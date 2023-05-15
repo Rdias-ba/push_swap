@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 17:52:59 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/03/15 18:22:39 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:25:52 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static	int	get_max_bits(t_tabl *list)
 {
 	t_tabl		*temp;
-	size_t		max;
+	int			max;
 	int			max_bits;
 
 	temp = list;
@@ -56,7 +56,6 @@ void	sorting_big(t_tabl **list_a, t_tabl **list_b)
 		}
 		while (get_stack_nb(*list_b) > 0)
 			push_a(list_a, list_b);
-		arg_indexer(list_a);
 		i++;
 	}
 }

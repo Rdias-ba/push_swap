@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tab_struct_utils.c                                 :+:      :+:    :+:   */
+/*   tab_struct_utils_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 16:07:34 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/09 22:36:13 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/11 18:37:01 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../include_bonus/push_swap_bonus.h"
 
 void	parsing(int argc, char **argv, t_tabl **list_a)
 {

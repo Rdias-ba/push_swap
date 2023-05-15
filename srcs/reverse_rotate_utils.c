@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 18:23:26 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/03/14 22:29:49 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/03/22 08:30:42 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,16 @@
 static void	reverse_rotate(t_tabl **list)
 {
 	t_tabl	*temp;
-	int		lastnb;
+	t_tabl	*copy;
 
-	temp = lastcell(*list);
 	if (!*list)
 		return ;
-	lastnb = temp->tab;
-	lst_addfront(list, newcell(lastnb));
+	temp = lastcell(*list);
+	copy = newcell(temp->tab, temp->index);
+	lst_addfront(list, copy);
 	temp = *list;
 	while (temp->next->next)
 		temp = temp->next;
-
 	free(temp->next);
 	temp->next = NULL;
 }

@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 15:44:49 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/15 17:50:03 by rdias-ba         ###   ########.fr       */
+/*   Created: 2023/05/11 17:49:33 by rdias-ba          #+#    #+#             */
+/*   Updated: 2023/05/15 17:51:16 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../include_bonus/push_swap_bonus.h"
 
 int	main(int argc, char **argv)
 {
@@ -29,7 +29,13 @@ int	main(int argc, char **argv)
 		parsing(argc, argv, &tab_a);
 	}
 	arg_indexer(&tab_a);
-	sort_tab(&tab_a, &tab_b);
+	read_from_stdin(&tab_a, &tab_b);
+	if (!tab_a)
+		ft_printf("KO\n");
+	else if (check_is_sorted(tab_a) && !tab_b)
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
 	free_list(&tab_a, &tab_b);
 	return (0);
 }

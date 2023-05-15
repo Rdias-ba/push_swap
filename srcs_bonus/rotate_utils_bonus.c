@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_utils.c                                     :+:      :+:    :+:   */
+/*   rotate_utils_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 18:07:07 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/03/22 07:48:47 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/12 16:02:38 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	rotate_a(t_tabl **list)
 	if (get_stack_nb(*list) < 2)
 		return ;
 	rotate(list);
-	ft_printf("ra\n");
 }
 
 void	rotate_b(t_tabl **list)
@@ -43,7 +42,6 @@ void	rotate_b(t_tabl **list)
 	if (get_stack_nb(*list) < 2)
 		return ;
 	rotate(list);
-	ft_printf("rb\n");
 }
 
 void	rotate_rotate(t_tabl **list_a, t_tabl **list_b)
@@ -54,5 +52,4 @@ void	rotate_rotate(t_tabl **list_a, t_tabl **list_b)
 		return ;
 	rotate(list_a);
 	rotate(list_b);
-	ft_printf("rr\n");
 }

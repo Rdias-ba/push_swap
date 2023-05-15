@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   params_checking.c                                  :+:      :+:    :+:   */
+/*   params_checking_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 16:13:33 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/11 17:24:56 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/11 18:36:32 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../include_bonus/push_swap_bonus.h"
 
 void	check_dup(int c, char **list)
 {

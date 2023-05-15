@@ -6,7 +6,7 @@
 #    By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/21 00:14:33 by rdias-ba          #+#    #+#              #
-#    Updated: 2023/02/27 18:14:01 by rdias-ba         ###   ########.fr        #
+#    Updated: 2023/03/22 04:01:16 by rdias-ba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS = ft_isdigit.c\
 		ft_strlcat.c\
 		ft_substr.c\
 		ft_atoi.c\
+		ft_atoll.c\
 		ft_itoa.c\
 		ft_putendl_fd.c\
 		ft_strlcpy.c\

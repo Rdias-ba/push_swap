@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_utils.c                                       :+:      :+:    :+:   */
+/*   swap_utils_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:17:11 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/03/22 07:55:29 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/05/15 14:25:32 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,24 @@ static void	swap(t_tabl *list)
 	t_tabl	*temp;
 	int		firstelem;
 	int		secondelem;
+	int		firstelem_ind;
+	int		secondelem_ind;
 
 	temp = list;
 	if (!list)
 		return ;
 	firstelem = temp->tab;
+	firstelem_ind = temp->index;
 	temp = temp->next;
 	secondelem = temp->tab;
+	secondelem_ind = temp->index;
 	if (firstelem != secondelem)
 	{
 		list->tab = secondelem;
+		list->index = secondelem_ind;
 		list = list->next;
 		list->tab = firstelem;
+		list->index = firstelem_ind;
 	}
 }
 
@@ -39,7 +45,6 @@ void	swap_a(t_tabl *list)
 	if (get_stack_nb(list) < 2)
 		return ;
 	swap(list);
-	ft_printf("sa\n");
 }
 
 void	swap_b(t_tabl *list)
@@ -49,7 +54,6 @@ void	swap_b(t_tabl *list)
 	if (get_stack_nb(list) < 2)
 		return ;
 	swap(list);
-	ft_printf("sb\n");
 }
 
 void	swap_swap(t_tabl *list_a, t_tabl *list_b)
@@ -60,5 +64,4 @@ void	swap_swap(t_tabl *list_a, t_tabl *list_b)
 		return ;
 	swap(list_a);
 	swap(list_b);
-	ft_printf("ss\n");
 }
