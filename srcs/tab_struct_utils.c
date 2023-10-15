@@ -6,7 +6,7 @@
 /*   By: rdias-ba <rdias-ba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 16:07:34 by rdias-ba          #+#    #+#             */
-/*   Updated: 2023/05/09 22:36:13 by rdias-ba         ###   ########.fr       */
+/*   Updated: 2023/10/16 00:14:27 by rdias-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	parsing(int argc, char **argv, t_tabl **list_a)
 
 	i = 1;
 	while (i < argc)
-	{	
+	{
 		splited = ft_split(argv[i], ' ');
 		temp = splited;
 		while (*splited)
